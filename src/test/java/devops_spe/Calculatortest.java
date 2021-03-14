@@ -11,35 +11,35 @@ public class Calculatortest {
 
     @Test
     public void testsqrt() {
-        int a = 16;
-        int expectedResult = 4;
-        long result = calculator.sqrt(a);
-        Assert.assertEquals(expectedResult, result);;
+        double a = 16;
+        double expectedResult = 4;
+        double result = calculator.sqrt(a);
+        Assert.assertEquals(expectedResult, result,0.0005);;
     }
 
     @Test
     public void testfactorial() {
-        int a = 5;
-        int expectedResult = 120;
-        long result = calculator.factorial(a);
-        Assert.assertEquals(expectedResult, result);;
+        double a = 5;
+        double expectedResult = 120;
+        double result = calculator.factorial(a);
+        Assert.assertEquals(expectedResult, result,0.0005);;
     }
 
     @Test
     public void testlog() {
-        int a = 10;
-        long expectedResult = 1;
-        long result = calculator.log(a);
-        Assert.assertEquals(expectedResult, result);;
+        double a = 10;
+        double expectedResult = 2.30;
+        double result = calculator.log(a);
+        Assert.assertEquals(expectedResult, result,0.0005);;
     }
 
     @Test
     public void testpower() {
-        int a = 5;
-        int b = 3;
+        double a = 5;
+        double b = 3;
         double expectedResult = 125;
         double result = calculator.power(a, b);
-        Assert.assertEquals(expectedResult, result);
+        Assert.assertEquals(expectedResult, result,0.0005);
     }
 
 
