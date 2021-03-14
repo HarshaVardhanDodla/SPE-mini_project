@@ -27,20 +27,20 @@ pipeline {
  	      		}
  		    }
  		}
-   // stage('Deploy to Rundeck') {
-     // agent any
-     // steps {
-       // script {
-         // step([$class: "RundeckNotifier",
-          //rundeckInstance: "Rundeck",
-         // shouldFailTheBuild: true,
-          //shouldWaitForRundeckJob: true,
-         // options: """
-           // BUILD_VERSION=$BUILD_NUMBER
-          //""",
-          //jobId: "d0b18ecc-9734-4277-a42e-867aee27a2b4"])
-        //}
-      //}
-   // }
+   stage('Deploy to Rundeck') {
+     agent any
+     steps {
+       script {
+         step([$class: "RundeckNotifier",
+          rundeckInstance: "Rundeck",
+         shouldFailTheBuild: true,
+          shouldWaitForRundeckJob: true,
+         options: """
+           BUILD_VERSION=$BUILD_NUMBER
+          """,
+          jobId: "cbefc2de-a41a-42e3-8719-6648dfacf95b"])
+        }
+      }
+   }
    }
  }
