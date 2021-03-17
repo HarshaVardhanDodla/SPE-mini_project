@@ -32,13 +32,12 @@ pipeline {
      steps {
        script {
          step([$class: "RundeckNotifier",
-          rundeckInstance: "Rundeck",
-         shouldFailTheBuild: true,
-          shouldWaitForRundeckJob: true,
-         options: """
-           BUILD_VERSION=$BUILD_NUMBER
-          """,
-          jobId: "cbefc2de-a41a-42e3-8719-6648dfacf95b"])
+                  includeRundeckLogs: true,
+                  jobId: "cbefc2de-a41a-42e3-8719-6648dfacf95b",
+                  rundeckInstance: "Rundeck",
+                  shouldFailTheBuild: true,
+                  shouldWaitForRundeckJob: true,
+                  tailLog: true])
         }
       }
    }
